@@ -1,0 +1,240 @@
+/* ==========================================================================
+   Design Tokens & Variables (North Star Bakery)
+   ========================================================================== */
+:root {
+  /* 4 Selected Brand Colors */
+  --color-cream: #FFF8F0;     /* Background & surfaces */
+  --color-brown: #6B3E26;     /* Primary brand, headings, buttons */
+  --color-peach: #D88C5A;     /* Accents, borders, highlights */
+  --color-charcoal: #2F2A26;  /* High-contrast readable body text */
+
+  /* Typography (Max 2 Font Families) */
+  --font-heading: 'Georgia', 'Playfair Display', serif;
+  --font-body: 'Segoe UI', system-ui, -apple-system, sans-serif;
+
+  /* Spacing Scale */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2.5rem;
+  --space-xl: 4rem;
+
+  --max-width: 900px;
+  --border-radius: 6px;
+}
+
+/* ==========================================================================
+   Base & Resets
+   ========================================================================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: var(--color-charcoal);
+  background-color: var(--color-cream);
+}
+
+/* Accessibility: Skip Link */
+a[href="#main-content"] {
+  position: absolute;
+  top: -100px;
+  left: 1rem;
+  background: var(--color-brown);
+  color: var(--color-cream);
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--border-radius);
+  text-decoration: none;
+  font-weight: 600;
+  z-index: 999;
+}
+
+a[href="#main-content"]:focus {
+  top: 1rem;
+}
+
+/* ==========================================================================
+   Typography & Scannability
+   ========================================================================== */
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  color: var(--color-brown);
+  line-height: 1.25;
+  margin-top: 0;
+}
+
+h1 {
+  font-size: 2.25rem;
+  margin-bottom: var(--space-md);
+}
+
+h2 {
+  font-size: 1.6rem;
+  margin-top: var(--space-lg);
+  margin-bottom: var(--space-sm);
+  border-bottom: 2px solid var(--color-peach);
+  padding-bottom: var(--space-xs);
+}
+
+h3 {
+  font-size: 1.25rem;
+  margin-top: var(--space-md);
+  margin-bottom: var(--space-xs);
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: var(--space-sm);
+  max-width: 72ch;
+}
+
+a {
+  color: var(--color-brown);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.2s ease;
+}
+
+a:hover, a:focus {
+  color: var(--color-peach);
+}
+
+/* ==========================================================================
+   Header & Navigation
+   ========================================================================== */
+header {
+  background-color: #FFFFFF;
+  border-bottom: 2px solid var(--color-peach);
+  padding: var(--space-sm) var(--space-md);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+header img {
+  display: block;
+  max-height: 75px;
+  width: auto;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-md);
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--color-charcoal);
+  font-weight: 600;
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--border-radius);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+nav a:hover,
+nav a:focus {
+  color: var(--color-cream);
+  background-color: var(--color-brown);
+}
+
+/* ==========================================================================
+   Main Content Layout
+   ========================================================================== */
+main {
+  width: 90%;
+  max-width: var(--max-width);
+  margin: var(--space-xl) auto;
+  padding: var(--space-lg);
+  background-color: #FFFFFF;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--color-peach);
+  box-shadow: 0 4px 14px rgba(47, 42, 38, 0.06);
+}
+
+section {
+  margin-bottom: var(--space-lg);
+}
+
+img, video {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--border-radius);
+  display: block;
+}
+
+/* ==========================================================================
+   Forms & Controls (contact.html)
+   ========================================================================== */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  max-width: 520px;
+  margin-top: var(--space-md);
+}
+
+label {
+  font-weight: 600;
+  color: var(--color-charcoal);
+}
+
+input, textarea, select {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  padding: 0.75rem;
+  border: 1px solid var(--color-peach);
+  border-radius: var(--border-radius);
+  background-color: var(--color-cream);
+  color: var(--color-charcoal);
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: 2px solid var(--color-brown);
+  background-color: #FFFFFF;
+}
+
+button, input[type="submit"] {
+  background-color: var(--color-brown);
+  color: var(--color-cream);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  align-self: flex-start;
+  transition: background-color 0.2s ease;
+}
+
+button:hover, input[type="submit"]:hover {
+  background-color: var(--color-peach);
+  color: var(--color-charcoal);
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+footer {
+  text-align: center;
+  padding: var(--space-lg) var(--space-sm);
+  background-color: var(--color-brown);
+  color: var(--color-cream);
+  margin-top: var(--space-xl);
+}
+
+footer p {
+  margin: 0;
+  max-width: 100%;
+}
